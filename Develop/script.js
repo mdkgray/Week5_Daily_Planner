@@ -17,11 +17,26 @@
 var saveButton = $(".saveButton");
 
 // display current day in jumbotron
-// $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
+$("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
-window.setInterval(function () {
-    $('#currentDay').text(moment().format('dddd MMMM Do YYYY h:mm:ss a'));
-}, 1000);
+// window.setInterval(function () {
+//     $('#currentDay').text(moment().format('dddd MMMM Do YYYY h:mm:ss a'));
+// }, 1000);
+
 
 // color coding time blocks 
+function timeblockColor() {
+    var currentTime = moment().hours();
 
+    $('.timeBlock').each(function() {
+        var currentHour = parseInt($(this).attr('id'));
+        // console.log(this);
+        if (currentHour > currentTime) {
+            $(this).addClass('.future');
+        } else if (currentHour === currentTime) {
+            $(this).addClass('.present');
+        } else {
+            $(this).addClass('.past');
+        }
+    })
+};
