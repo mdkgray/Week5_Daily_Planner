@@ -26,14 +26,14 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 // color coding time blocks 
 function timeblockColor() {
-    var currentTime = moment().hours();
+    var time = moment().hours();
 
     $('.timeBlock').each(function() {
-        var currentHour = parseInt($(this).attr('id'));
+        var currentTime = parseInt($(this).attr('id'));
         // console.log(this);
-        if (currentHour > currentTime) {
+        if (currentTime > time) {
             $(this).addClass('.future');
-        } else if (currentHour === currentTime) {
+        } else if (currentTime === time) {
             $(this).addClass('.present');
         } else {
             $(this).addClass('.past');
