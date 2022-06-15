@@ -11,3 +11,17 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
+
+
+// define save button variable 
+var saveButton = $(".saveButton");
+
+// display current day in jumbotron
+// $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
+
+window.setInterval(function () {
+    $('#currentDay').text(moment().format('dddd MMMM Do YYYY h:mm:ss a'));
+}, 1000);
+
+// color coding time blocks 
+
