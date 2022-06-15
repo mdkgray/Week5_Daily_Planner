@@ -30,7 +30,6 @@ function timeblockColor() {
 
     $('.timeBlock').each(function() {
         var currentTime = parseInt($(this).attr('id'));
-        // console.log(this);
         if (currentTime > time) {
             $(this).addClass('.future');
         } else if (currentTime === time) {
