@@ -28,14 +28,18 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 function timeblockColor() {
     var time = moment().hours();
 
-    $('.timeBlock').each(function() {
+    $('.plannerText').each(function() {
         var currentTime = parseInt($(this).attr('id'));
         if (currentTime > time) {
-            $(this).addClass('.future');
+            $(this).addClass('future');
         } else if (currentTime === time) {
-            $(this).addClass('.present');
+            $(this).addClass('present');
         } else {
-            $(this).addClass('.past');
+            $(this).addClass('past');
         }
     })
 };
+
+
+// Call functions
+timeblockColor();
