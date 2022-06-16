@@ -1,24 +1,25 @@
 // current time variable
 var hour = moment().hours();
 
+// variable for planner hour value
+var plannerHour = $(this).parent().attr('id');
+
 // save button variable 
 var saveButton = $(".saveButton");
 
 // display current day in jumbotron
-$("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
+$('#currentDay').text(moment().format('dddd MMMM Do YYYY'));
 
 // color coding time blocks 
 function timeblockColor() {
     var hour = moment().hours();
 
     $('.plannerText').each(function() {
-        var currHour = parseInt($(this).attr('id'));
+        var plannerHour = parseInt($(this).parent().attr('id'));
 
-        console.log(this);
-
-        if (currHour > hour) {
+        if (plannerHour > hour) {
             $(this).addClass('future');
-        } else if (currHour === hour) {
+        } else if (plannerHour === hour) {
             $(this).addClass('present');
         } else {
             $(this).addClass('past');
@@ -28,11 +29,11 @@ function timeblockColor() {
 
 // Function for save button click
 saveButton.on('click', function() {
-    var time = $(this).siblings("hour").text();
-    var plan = $(this).siblings("plannerText").text();
+    var time = $(this).siblings('hour').text();
+    var plan = $(this).siblings('plannerText').text();
 
     console.log(this);
-    console.log(currHour);
+    console.log(plannerHour);
 
     localStorage.setItem(time, plan);
 })
@@ -40,11 +41,11 @@ saveButton.on('click', function() {
 // Function to save content in planner to local storage
 function savePlanner () {
     $(".hour").each(function() {
-        var currHour = $(this).text();
-        var currPlan = localStorage.getItem(currHour);
+        var plannerHour = $(this).text();
+        var currPlan = localStorage.getItem(plannerHour);
 
         if (currPlan !== null) {
-            $(this).siblings("plannerText").val(currPlan);
+            $(this).siblings('plannerText').val(currPlan);
         }
     });
 }
