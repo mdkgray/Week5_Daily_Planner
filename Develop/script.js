@@ -17,6 +17,7 @@ function timeblockColor() {
     $('.plannerText').each(function() {
         var plannerHour = parseInt($(this).parent().attr('id'));
 
+        // changes colors of time blocks
         if (plannerHour > hour) {
             $(this).addClass('future');
         } else if (plannerHour === hour) {
@@ -27,26 +28,26 @@ function timeblockColor() {
     })
 };
 
-// Function for save button click
+// Function for save button click to local storage
 saveButton.on('click', function() {
-    var time = $(this).siblings('hour').text();
-    var plan = $(this).siblings('plannerText').text();
+    var time = $(this).siblings('.hour').text();
+    var plan = $(this).siblings('.plannerText').val();
 
-    console.log(this);
+    console.log(time);
+    console.log(plan);
 
+    // Sets items to local storage
     localStorage.setItem(time, plan);
 })
 
-// Function to save content in planner to local storage
+// Function to save content in planner 
 function savePlanner () {
     $(".hour").each(function() {
         var plannerHour = $(this).text();
         var currPlan = localStorage.getItem(plannerHour);
 
-        console.log(plannerHour);
-
         if (currPlan !== null) {
-            $(this).siblings('plannerText').val(currPlan);
+            $(this).siblings('.plannerText').val(currPlan);
         }
     });
 }
