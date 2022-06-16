@@ -33,7 +33,6 @@ saveButton.on('click', function() {
     var plan = $(this).siblings('plannerText').text();
 
     console.log(this);
-    console.log(plannerHour);
 
     localStorage.setItem(time, plan);
 })
@@ -43,6 +42,8 @@ function savePlanner () {
     $(".hour").each(function() {
         var plannerHour = $(this).text();
         var currPlan = localStorage.getItem(plannerHour);
+
+        console.log(plannerHour);
 
         if (currPlan !== null) {
             $(this).siblings('plannerText').val(currPlan);
