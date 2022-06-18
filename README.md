@@ -35,3 +35,6 @@ JavaScript:
 ## Website URL
 [Click here to view the website](https://mdkgray.github.io/Week5_Daily_Planner/)
 
+## Screenshots
+![Screenshot-1](./Assets/Screenshots/Daily_Planner_1.PNG)
+![Screenshot-2](./Assets/Screenshots/Daily_Planner_2.PNG)
