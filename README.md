@@ -33,7 +33,7 @@ JavaScript:
 - Added function for saving information in planner to local storage once save button is clicked.
 
 ## Website URL
-[Click here to view the website](https://mdkgray.github.io/Week5_Daily_Planner/)
+[Click here to view the website](https://mdkgray.github.io/daily_planner/)
 
 ## Screenshots
 ![Screenshot-1](./Assets/Screenshots/Daily_Planner_1.PNG)
