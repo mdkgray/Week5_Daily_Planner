@@ -1,4 +1,4 @@
-# Week 5 Daily Planner
+# Daily Planner
 
 ### By Mackenzie Gray 
 
@@ -11,8 +11,6 @@
 ## Description
 
 The motivation for this project was to develop a daily planner to assist in time management for a busy employee. Tasks can be entered into the planner and the past, present and future times are displayed in different colours to assist in time management. 
-
-A HTML and CSS codebase was provided and then added to as well as writing of the Javascript code. 
 
 ## Outline of codebase writing 
 
@@ -33,7 +31,7 @@ JavaScript:
 - Added function for saving information in planner to local storage once save button is clicked.
 
 ## Website URL
-[Click here to view the website](https://mdkgray.github.io/daily_planner/)
+[Click here to view](https://mdkgray.github.io/daily_planner/)
 
 ## Screenshots
 ![Screenshot-1](./Assets/Screenshots/Daily_Planner_1.PNG)
